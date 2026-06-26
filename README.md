@@ -65,6 +65,59 @@ vim.opt.termguicolors = false
 Neovim then inherits Midnight Blue's colors directly from Ghostty — one source of truth.
 Tradeoff: 16-color syntax instead of truecolor (Treesitter detail flattens).
 
+## VS Code
+
+The `vscode/` directory is a complete color-theme extension (`package.json` +
+`themes/midnight-blue-color-theme.json`) covering the editor UI, syntax tokens, and the
+integrated terminal — the same palette as Ghostty and Neovim.
+
+### A. Full color theme
+
+Install it locally without publishing by symlinking it into your extensions directory, then
+restart VS Code and pick **Midnight Blue** from `Ctrl/Cmd+K Ctrl/Cmd+T`:
+
+```sh
+ln -s "$PWD/vscode" ~/.vscode/extensions/midnight-blue-theme
+```
+
+To package or publish to the Marketplace instead:
+
+```sh
+cd vscode
+npx @vscode/vsce package      # -> midnight-blue-theme-1.0.0.vsix
+code --install-extension midnight-blue-theme-1.0.0.vsix
+```
+
+### B. Integrated terminal only
+
+If you only want the 16-color palette in VS Code's terminal (no editor theming), drop this into
+your `settings.json` — no extension needed:
+
+```jsonc
+"workbench.colorCustomizations": {
+  "terminal.background": "#1A1F2B",
+  "terminal.foreground": "#E6EAF2",
+  "terminalCursor.foreground": "#8FB6E8",
+  "terminal.selectionBackground": "#33508A",
+  "terminal.ansiBlack": "#39414F",
+  "terminal.ansiRed": "#FF6B6B",
+  "terminal.ansiGreen": "#8CE0A0",
+  "terminal.ansiYellow": "#FFD479",
+  "terminal.ansiBlue": "#6FA8FF",
+  "terminal.ansiMagenta": "#C792EA",
+  "terminal.ansiCyan": "#56C9D6",
+  "terminal.ansiWhite": "#D8DEE9",
+  "terminal.ansiBrightBlack": "#5A6478",
+  "terminal.ansiBrightRed": "#FF8B8B",
+  "terminal.ansiBrightGreen": "#A6E8B4",
+  "terminal.ansiBrightYellow": "#FFE3A3",
+  "terminal.ansiBrightBlue": "#9CC4FF",
+  "terminal.ansiBrightMagenta": "#DDB0F6",
+  "terminal.ansiBrightCyan": "#8BE9F0",
+  "terminal.ansiBrightWhite": "#FFFFFF"
+}
+```
+
 ## Palette
 
 | Role | Normal | Bright |

@@ -1,0 +1,34 @@
+{
+  "name": "midnight-blue-theme",
+  "displayName": "Midnight Blue",
+  "description": "A cool, deep-navy theme. Soft cool-white text on dark navy, with a saturated palette that keeps blue and cyan distinct. Shared with Ghostty and Neovim from a single source of truth.",
+  "version": "1.0.0",
+  "publisher": "AshminJayson",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "theme",
+    "dark",
+    "navy",
+    "blue",
+    "color-theme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AshminJayson/midnight-blue-theme.git"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "Midnight Blue",
+        "uiTheme": "vs-dark",
+        "path": "./themes/midnight-blue-color-theme.json"
+      }
+    ]
+  }
+}
